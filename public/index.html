@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/handlebars.js"></script>
+  <script src="javascripts/template_manager.js"></script>
+  <script src="javascripts/form_manager.js"></script>
+  <script src="javascripts/API.js"></script>
+  <script src="javascripts/validation_manager.js"></script>
+  <script src="javascripts/list_manager.js"></script>
+  <script src="javascripts/app.js"></script>
+</head>
+<body>
+  <div id="mainPage">
+    <button id='addContactButton' type="submit">Add Contact</button>
+    <div id='searchBars'>
+      <label for='searchBarText'>Search text: </label>
+      <input type='text' name='searchBarText' id='searchBarText'>
+      <label for='searchBarTags'>Search tags: </label>
+      <input type='text' name='searchBarTags' id='searchBarTags'>
+    </div>
+    <div id="listContainer">
+
+    </div>
+  </div>
+
+  <div id="formPage" style="visibility: hidden;">
+    <div id="formContainer">
+
+    </div>
+    <div id="back">
+      <form method="POST" action="books">
+        <button type="submit">Back</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+
+<script id='addContactForm' type="text/x-handlebars">
+  <div class='add'>
+    <form id="addContactForm" method="POST" action="books">
+      <p><label>Full Name: <input type="text" name="full_name"></label></p>
+      <p><label>Email: <input type="text" name="email"></label></p>
+      <p><label>Phone Number: <input type="text" name="phone_number"></label></p>
+      <p><label>Contact Tags: <input type="text" name="tags"></label></p>
+      <p><button type="submit">Submit</button></p>
+    </form>
+  </div>
+</script>
+
+<script id='editContactForm' type="text/x-handlebars">
+  <div class='edit'>
+    <form id="editContactForm" method="POST" action="books">
+      <p><label>Full Name: <input type="text" name="full_name" value="{{full_name}}"></label></p>
+      <p><label>Email: <input type="text" name="email" value="{{email}}"></label></p>
+      <p><label>Phone Number: <input type="text" name="phone_number" value="{{phone_number}}"></label></p>
+      <p><label>Tags: <input type="text" name="tags" value="{{tags}}"></label></p>
+      <p><button type="submit">Submit</button></p>
+      <span id='contactId' style='visibility: hidden;'>{{id}}</span>
+    </form>
+  </div>
+</script>
+
+<script id="contactList" type="text/x-handlebars">
+  <ul style="list-style-type:none;">
+    {{#each contacts}}
+      {{> contactPartial}}
+    {{/each}}
+  </ul>
+</script>
+
+<script id="contactPartial" class="partial" type="text/x-handlebars">
+  <li>
+    <ul style="list-style-type:none;">
+      <span class='id' style='visibility: hidden'>{{id}}</span>
+      <li>Name: <span class='full_name'>{{ full_name }}</span></li>
+      <li>Email: <span class='email'>{{ email }}</span></li>
+      <li>Phone number: <span class='phone_number'>{{ phone_number }}</span></li>
+      <li>Tags: <span class='tag'>{{ tags }}</span></li>
+    </ul>
+    <div style='margin-left: 3em'>
+      <button class="edit" type="submit">Edit</button>
+      <button class="delete" type="submit">Delete</button>
+    </div>
+  </li>
+</script>
+
+<script class="partial" id="tagPartial" type="text/x-handlebars">
+  <li>Tags: <span> {{this}} </span></li>
+</script>
+
+</html>
+
+

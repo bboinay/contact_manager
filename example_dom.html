@@ -1,0 +1,71 @@
+<html class="no-js"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Contact Manager using Backbone</title>
+  <meta name="description" content="Contact Manager using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="public/stylesheets/main.css">
+  
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="59b62520.main" src="scripts/59b62520.main.js"></script></head>
+<body>
+  <header class="bs-header">
+    <div class="container">
+      <a href="#home"><h1>Contact Manager</h1></a>
+      <p>Using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 main-container">
+      <div style="">
+        <div class="row well">
+          <div class="text-center col-sm-6">
+            <a href="#contacts/new" class="btn btn-lg btn-outline">Add Contact</a>
+          </div>
+          <div class="text-center col-sm-6">
+            <input type="text" class="form-control contact-name-search" placeholder="Search">
+          </div>
+        </div>
+          <ul class="media-list row contacts-container">
+            <li class="media col-md-3 col-sm-4">
+              <div class="media-heading">
+                <h3>goober footson</h3>
+              </div>
+              <div class="media-body">
+                <dl>
+                  <dt>Phone Number:</dt>
+                  <dd>123 123 123</dd>
+                  <dt>Email:</dt>
+                  <dd>gf@email.com</dd>
+                </dl>
+              </div>
+              <div class="contact-btn-wrapper">
+                <a href="#contacts/edit/1" class="edit-contact btn btn-outline">
+                  <span class="glyphicon glyphicon-pencil"></span> Edit
+                </a>
+                <a href="#contacts/delete/1" class="delete-contact btn btn-outline">
+                  <span class="glyphicon glyphicon-trash"></span> Delete
+                </a>
+              </div>
+              <hr>
+            </li>
+          </ul>
+          <div class="empty-contacts-placeholder">
+          </div>
+          <div class="empty-search-contacts-placeholder">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer text-center">
+      <p>Developed by <a href="http://www.devsaran.com">Devsaran.com</a> and <a href="http://www.239listing.com">239 Listing Real Estate</a>.</p>
+    </div>
+  </div> <!-- /container -->
+
+  <script data-main="scripts/59b62520.main" src="bower_components/requirejs/require.js"></script>
+
+</body></html>
+
+

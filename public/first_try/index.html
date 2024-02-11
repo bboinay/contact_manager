@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/handlebars.js"></script>
+</head>
+<body>
+  <div id="contactList">
+  </div>
+  
+  
+</body>
+
+<script id='addContact' type="text/x-handlebars">
+  <div>
+    <button id='addContact' type="submit">Add Contact</button>
+  </div>
+</script>
+
+<script id='addContactForm' type="text/x-handlebars">
+  <div class='add'>
+    <form id="addContactForm" method="POST" action="books">
+      <p><label>Full Name: <input type="text" name="full_name"></label></p>
+      <p><label>Email: <input type="text" name="email"></label></p>
+      <p><label>Phone Number: <input type="text" name="phone_number"></label></p>
+      <p><button type="submit">Submit</button></p>
+    </form>
+  </div>
+</script>
+
+<script id='editContactForm' type="text/x-handlebars">
+  <div class='edit'>
+    <form id="editContactForm" method="POST" action="books">
+      <p><label>Full Name: <input type="text" name="full_name" value="{{full_name}}"></label></p>
+      <p><label>Email: <input type="text" name="email" value="{{email}}"></label></p>
+      <p><label>Phone Number: <input type="text" name="phone_number" value="{{phone_number}}"></label></p>
+      <p><button type="submit">Submit</button></p>
+    </form>
+  </div>
+</script>
+
+<script id="searchBars" type="text/x-handlebars">
+  <div id='searchBars'>
+    <label for='searchBarText'>Search text: </label>
+    <input type='text' name='searchBarText' id='searchBarText'>
+    <label for='searchBarTags'>Search tags: </label>
+    <input type='text' name='searchBarTags' id='searchBarTags'>
+  </div>
+</script>
+
+<script id="contactList" type="text/x-handlebars">
+  <ul style="list-style-type:none;">
+    {{#each contacts}}
+    <li>
+      <ul style="list-style-type:none;">
+        <span class='id' style='visibility: hidden'>{{this.id}}</span>
+        <li>Name: <span class='full_name'>{{ this.full_name }}</span></li>
+        <li>Email: <span class='email'>{{ this.email }}</span></li>
+        <li>Phone number: <span class='phone_number'>{{ this.phone_number }}</span></li>
+      </ul>
+      <div style='margin-left: 3em'>
+        <button class="edit" type="submit">Edit</button>
+        <button class="delete" type="submit">Delete</button>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</script>
+
+<script id="tags" type="text/x-handlebars">
+  <div>
+    <ul id='tags' style='list-style-type:none;'>
+      {{#each tags}}
+      <li>tag</li>
+      {{/each}}
+    <ul>
+    <form id="newTagForm" method="POST" action="books">
+      <p>
+        <label>Add new tag: <input type="text" name="newTag" id="newTag"></label>
+        <button type="submit">Submit</button>
+      </p>
+    </form>
+  </div>
+</script>
+
+<script id="back" type="text/x-handlebars">
+  <div id="back">
+    <form method="POST" action="books">
+      <p>
+        <button type="submit">Back</button>
+      </p>
+    </form>
+  </div>
+</script>
+
+<script src="javascripts/ben_contact_manager.js"></script>
+
+</html>
+
+

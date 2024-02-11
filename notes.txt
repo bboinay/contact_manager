@@ -1,0 +1,49 @@
+You should implement all the features there, including the search. 
+  [x] Add contact 
+    [x] display form
+    [x] catch/parse form
+    [ ] display list of existing tags + button to add new tag
+    [x] create contact object
+      [x] validate name
+      [x] validate email
+      [x] validate phone #
+    [x] add new contact to list
+    [x] update/display list
+
+  [x] Edit contact
+    [x] display form with contact's info prepopulated
+    [ ] display list of existing tags + button to add new tag
+    [x] catch/parse form
+    [x] update contact's info
+    [x] update/display list
+
+  [x] Delete contact
+    [x] Alert confirmation
+    [x] remove contact
+    [x] update/display list
+
+  [x] Search contacts
+    [x] Check if input field has changed values (or keypress event?)
+    [x] Gather input string
+    [x] Search for contacts by matching input string to contacts' 
+        phone #s, names, emails, or tags
+    [x] Restrict display of list to only matching items
+    [x] Update/display list whenever input string changes
+
+Also, implement a "tagging" feature, which allows you to 
+  [x] create tags, such as "marketing," "sales," "engineering,"
+    [x] Provide input form/field for new tags
+      [x] Validate tags for duplicates or empty strings
+
+  [ ] click on a tag to show all the contacts with that tag
+    [ ] show list of made tags
+    [ ] add clickability
+      [x] connect value of clicked link to search function but 
+          restrict searches to tags only (in case a tag string
+          matches a name or email address)
+    [x] Restrict display of list to only matching items
+    [x] Update/display list whenever input string changes
+
+  [x] Validate input
+  
+your application will have an API server to store and retrieve contacts.
